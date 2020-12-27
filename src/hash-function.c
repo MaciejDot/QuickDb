@@ -1,10 +1,11 @@
 #include "hash-function.h"
+#include <stdint.h>
 /*for hash tables and other data structeres not suitable for password storage*/
-extern unsigned int hash(const char* st, const unsigned int len) {
+extern uint32_t hash(const char* st, const uint32_t len) {
 	if (len <= 0 || st == 0) return 0;
-	unsigned int hash = len;
-	for (unsigned int index = 0; index < len / 2; ++index) {
-		hash += st[index] + (((unsigned int)st[index + 1]) << 8);
+	uint32_t hash = len;
+	for (uint32_t index = 0; index < len / 2; ++index) {
+		hash += st[index] + (((uint32_t)st[index + 1]) << 8);
 		hash += hash >> 11;
 	}
 	if (len % 2 == 1)
