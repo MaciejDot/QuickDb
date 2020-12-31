@@ -1,5 +1,5 @@
-#ifndef __HASH_FUNCTIONS_H__
-#define __HASH_FUNCTIONS_H__
+#ifndef __HASH_FUNCTION_H__
+#define __HASH_FUNCTION_H__
 #include <stdint.h>
-uint32_t hash(const char* st, const uint32_t len);
+extern uint32_t hash_string(const char* st, const uint32_t len);
 #endif

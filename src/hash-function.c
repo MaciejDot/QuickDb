@@ -1,7 +1,7 @@
 #include "hash-function.h"
 #include <stdint.h>
 /*for hash tables and other data structeres not suitable for password storage*/
-extern uint32_t hash(const char* st, const uint32_t len) {
+extern uint32_t hash_string(const char* st, const uint32_t len) {
 	if (len <= 0 || st == 0) return 0;
 	uint32_t hash = len;
 	for (uint32_t index = 0; index < len / 2; ++index) {
